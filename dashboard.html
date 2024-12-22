@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard EPL</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/courses.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <!-- Sidebar -->
+    <nav class="sidebar glass-effect">
+        <div class="profile">
+            <img id="userPhoto" src="assets/placeholder.png" alt="Photo de profil">
+            <h3 id="userName">Chargement...</h3>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#annonces" class="active">Annonces</a></li>
+            <li><a href="#cours">Cours</a></li>
+            <li><a href="#videos">Vidéos</a></li>
+            <li><a href="#chat">Chat Étudiants</a></li>
+            <li><a href="#suggestions">Suggestions</a></li>
+            <li><a href="#" id="logoutBtn">Déconnexion</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Annonces Section -->
+        <section id="annonces" class="section glass-effect">
+            <h2>Annonces Importantes</h2>
+            <div id="announcements-container" class="announcements-grid">
+                <!-- Les annonces seront injectées ici dynamiquement -->
+            </div>
+        </section>
+
+        <!-- Cours Section -->
+        <section id="cours" class="section glass-effect">
+            <h2>Mes Cours</h2>
+            <div id="courses-container" class="courses-grid">
+                <!-- Les cours seront injectés ici dynamiquement -->
+            </div>
+        </section>
+
+        <!-- Vidéos Section -->
+        <section id="videos" class="section glass-effect">
+            <h2>Actualités Scientifiques</h2>
+            <div class="videos-grid">
+                <div class="video-card" id="video1">
+                    <!-- Vidéo 1 sera injectée ici -->
+                </div>
+                <div class="video-card" id="video2">
+                    <!-- Vidéo 2 sera injectée ici -->
+                </div>
+                <div class="video-card" id="video3">
+                    <!-- Vidéo 3 sera injectée ici -->
+                </div>
+                <div class="video-card" id="video4">
+                    <!-- Vidéo 4 sera injectée ici -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat Section -->
+        <section id="chat" class="section glass-effect">
+            <h2>Chat Étudiants</h2>
+            <div class="chat-container">
+                <div id="messages" class="messages">
+                    <!-- Les messages seront injectés ici -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="messageInput" placeholder="Votre message...">
+                    <label for="fileInput" class="file-label">
+                        <span class="material-icons">attach_file</span>
+                    </label>
+                    <input type="file" id="fileInput" accept="image/*,.pdf,video/*" hidden>
+                    <button id="sendMessage">Envoyer</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suggestions Section -->
+        <section id="suggestions" class="section glass-effect">
+            <h2>Suggestions</h2>
+            <form id="suggestionForm" class="suggestion-form">
+                <textarea id="suggestionText" placeholder="Votre suggestion..." required></textarea>
+                <button type="submit" class="neon-button">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-storage.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script type="module" src="js/dashboard/auth.js"></script>
+    <script type="module" src="js/dashboard/announcements.js"></script>
+    <script type="module" src="js/dashboard/courses.js"></script>
+    <script type="module" src="js/dashboard/chat.js"></script>
+    <script type="module" src="js/dashboard/suggestions.js"></script>
+    <script type="module" src="js/dashboard/main.js"></script>
+</body>
+</html>

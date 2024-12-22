@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Étudiant EPL</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/particles.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="container glass-effect">
+        <form id="registrationForm" class="registration-form">
+            <h2>Inscription Étudiant</h2>
+            
+            <div class="form-group">
+                <input type="text" id="nom" required>
+                <label>Nom</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="prenoms" required>
+                <label>Prénoms</label>
+            </div>
+
+            <div class="form-group">
+                <input type="date" id="dateNaissance" required>
+                <label>Date de naissance</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="adresse" required>
+                <label>Adresse</label>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" id="telephone" required>
+                <label>Numéro de téléphone</label>
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="email" required>
+                <label>Email</label>
+            </div>
+
+            <div class="form-group">
+                <select id="filiere" required>
+                    <option value="">Sélectionnez une filière</option>
+                    <option value="logistique">Logistique & transport</option>
+                    <option value="ia">Intelligence artificielle & Big data</option>
+                    <option value="informatique">Informatique & système</option>
+                    <option value="mecanique">LG Génie Mécanique</option>
+                    <option value="civil">LF Génie civil</option>
+                    <option value="electrique">LF Génie Electrique</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="semestre" required>
+                    <option value="">Sélectionnez un semestre</option>
+                    <option value="s1">Semestre 1</option>
+                    <option value="s2">Semestre 2</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="photo" class="photo-label">
+                    <div id="preview-container">
+                        <img id="preview" src="assets/placeholder.png" alt="Preview">
+                    </div>
+                    <span>Ajouter une photo d'identité</span>
+                </label>
+                <input type="file" id="photo" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="password" required>
+                <label>Créez un mot de passe</label>
+            </div>
+
+            <button type="submit" class="neon-button">S'inscrire</button>
+        </form>
+
+        <!-- Modal de confirmation -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content glass-effect">
+                <h3>Vérification des informations</h3>
+                <div id="summaryContent"></div>
+                <div class="modal-buttons">
+                    <button id="editBtn" class="neon-button">Modifier</button>
+                    <button id="confirmBtn" class="neon-button">Confirmer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
